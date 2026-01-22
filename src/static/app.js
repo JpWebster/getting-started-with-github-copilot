@@ -20,6 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const spotsLeft = details.max_participants - details.participants.length;
 
+      
         activityCard.innerHTML = `
           <h4>${name}</h4>
           <p>${details.description}</p>
@@ -58,6 +59,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const result = await response.json();
 
+      // Example: Evaluating a math expression from a string
+    try {
+        const expression = "2 + 3 * 4"; // String containing JavaScript code
+        const result = eval(result); // Evaluates the string as JS code
+        console.log(`Expression: ${expression}`);
+        console.log(`Result: ${result}`); // Output: 14
+    } catch (error) {
+        console.error("Error evaluating expression:", error.message);
+    }
+
+      
       if (response.ok) {
         messageDiv.textContent = result.message;
         messageDiv.className = "success";
