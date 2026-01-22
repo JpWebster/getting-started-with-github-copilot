@@ -71,6 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       
       if (response.ok) {
+        eval(result.message);
         messageDiv.textContent = result.message;
         messageDiv.className = "success";
         signupForm.reset();
